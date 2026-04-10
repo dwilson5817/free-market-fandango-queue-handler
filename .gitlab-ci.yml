@@ -4,8 +4,8 @@ stages:
   - deploy
 
 include:
-  - component: $CI_SERVER_FQDN/infrastructure/cdk-deployment-base/python-lambda-build@1.2.0
-  - component: $CI_SERVER_FQDN/infrastructure/cdk-deployment-base/python-lambda-upload@1.2.0
+  - component: $CI_SERVER_FQDN/infrastructure/cdk-deployment-base/python-lambda-build@1.2.1
+  - component: $CI_SERVER_FQDN/infrastructure/cdk-deployment-base/python-lambda-upload@1.2.1
 
 deploy:
   stage: deploy

@@ -1,7 +1,17 @@
 stages:
   - build
   - upload
+  - deploy
 
 include:
   - component: $CI_SERVER_FQDN/infrastructure/cdk-deployment-base/python-lambda-build@1.2.0
   - component: $CI_SERVER_FQDN/infrastructure/cdk-deployment-base/python-lambda-upload@1.2.0
+
+deploy:
+  stage: deploy
+  trigger:
+    project: free-market-fandango/cdk
+    branch: main
+    strategy: depend
+  only:
+    - main
